@@ -1,7 +1,11 @@
-- icon: 
-  names:
-  - obj
-  - bin
+default: 
 
-- icon: 
-  name: Properties
+icons:
+  - icon: 
+    names:
+    - obj
+    - bin
+  
+  - icon: 
+    name: Properties
+  

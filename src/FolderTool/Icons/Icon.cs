@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using YamlDotNet;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -19,24 +17,24 @@ public static class Icon
     public static string GetFileIcon(FileInfo file)
     {
         string resource = ManifestResourceHelper.ReadResource(fileIconsResourceLocation);
-        var icons = deserializer.Deserialize<List<FileIconModel>>(resource);
+        var icons = deserializer.Deserialize<FileIconDefinitionsModel>(resource);
 
         string extension = file.Extension[1..];
-        return icons
+        return icons.Icons
             .FirstOrDefault(icon => icon.GetExtensions().Contains(extension))
             ?.Icon
-            ?? "\uea7b";
+            ?? icons.Default;
     }
 
     public static string GetDirectoryIcon(DirectoryInfo directory)
     {
         string resource = ManifestResourceHelper.ReadResource(directoryIconsResourceLocation);
-        var icons = deserializer.Deserialize<List<DirectoryIconModel>>(resource);
+        var icons = deserializer.Deserialize<DirectoryIconDefinitionsModel>(resource);
 
         string name = directory.Name;
-        return icons
+        return icons.Icons
             .FirstOrDefault(icon => icon.GetNames().Contains(name))
             ?.Icon
-            ?? "\uf114";
+            ?? icons.Default;
     }
 }
