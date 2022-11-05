@@ -2,7 +2,7 @@
 using Spectre.Console;
 using Spectre.Console.Rendering;
 
-namespace FolderTool;
+namespace FolderTool.Rendering;
 
 internal sealed class RoundedTreeGuide : TreeGuide
 {

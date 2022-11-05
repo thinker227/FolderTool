@@ -3,7 +3,7 @@ using System.IO;
 using Spectre.Console;
 using Spectre.Console.Rendering;
 
-namespace FolderTool;
+namespace FolderTool.Rendering;
 
 public sealed class TreeRenderer
 {

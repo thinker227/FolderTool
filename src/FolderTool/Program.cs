@@ -5,6 +5,7 @@ using System.CommandLine.Parsing;
 using System.IO;
 using System.Text;
 using FolderTool;
+using FolderTool.Rendering;
 using Spectre.Console;
 
 RootCommand rootCommand = new()

@@ -1,4 +1,4 @@
-﻿namespace FolderTool;
+﻿namespace FolderTool.Rendering;
 
 public struct TreeRenderingOptions
 {

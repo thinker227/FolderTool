@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace FolderTool;
+namespace FolderTool.Rendering;
 
 public static class Icons
 {
