@@ -2,6 +2,9 @@
 
 A command-line tool for displaying a tree graph of the current directory.
 
+> **Warning**
+> This tool extensively uses [nerd font](https://www.nerdfonts.com) icons. If you wish to disable icons you can specify the [`--plain`](#plain) option when invoking the tool, or clone the repo and manually edit the [icon resource files](./src/FolderTool/Resources/). The tool is still *usable* without a nerd font, although using one is highly recommended.
+
 ## Installation
 
 1. Clone this repo.
