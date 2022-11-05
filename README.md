@@ -16,6 +16,9 @@ cd FolderTool
 ./install-tool.ps1
 ```
 
+> **Warning**
+> Installation requires the [.NET SDK](https://dotnet.microsoft.com/en-us/) >= 6.0.
+
 ## Usage
 ```cli
 folder [<search-pattern>] [options]
