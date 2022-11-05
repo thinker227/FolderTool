@@ -1,0 +1,42 @@
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using YamlDotNet;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
+namespace FolderTool.Rendering.Icons;
+
+public static class Icon
+{
+    private const string fileIconsResourceLocation = "FolderTool.Resources.FileIcons.yaml";
+    private const string directoryIconsResourceLocation = "FolderTool.Resources.DirectoryIcons.yaml";
+
+    private static readonly IDeserializer deserializer = new DeserializerBuilder()
+        .WithNamingConvention(HyphenatedNamingConvention.Instance)
+        .Build();
+
+    public static string GetFileIcon(FileInfo file)
+    {
+        string resource = ManifestResourceHelper.ReadResource(fileIconsResourceLocation);
+        var icons = deserializer.Deserialize<List<FileIconModel>>(resource);
+
+        string extension = file.Extension[1..];
+        return icons
+            .FirstOrDefault(icon => icon.GetExtensions().Contains(extension))
+            ?.Icon
+            ?? "\uea7b";
+    }
+
+    public static string GetDirectoryIcon(DirectoryInfo directory)
+    {
+        string resource = ManifestResourceHelper.ReadResource(directoryIconsResourceLocation);
+        var icons = deserializer.Deserialize<List<DirectoryIconModel>>(resource);
+
+        string name = directory.Name;
+        return icons
+            .FirstOrDefault(icon => icon.GetNames().Contains(name))
+            ?.Icon
+            ?? "\uf114";
+    }
+}

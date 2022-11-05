@@ -1,0 +1,36 @@
+- icon: 
+  extension: cs
+
+- icon: ﬏
+  extension: csproj
+
+- icon: 
+  extension: ps1
+
+- icon: 
+  extension: json
+
+- icon: 
+  extension: md
+
+- icon: 
+  extension: txt
+
+- icon: 
+  extensions:
+  - mp3
+  - wav
+  - flac
+
+- icon: 
+  extensions:
+  - mp4
+  - mov
+
+- icon: 
+  extensions:
+  - png
+  - jpeg
+  - jpg
+  - ico
+  - kra

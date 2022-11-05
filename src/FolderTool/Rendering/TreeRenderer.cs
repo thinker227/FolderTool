@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using FolderTool.Rendering.Icons;
 using Spectre.Console;
 using Spectre.Console.Rendering;
 
@@ -111,8 +112,8 @@ public sealed class TreeRenderer
 
         string icon = entry switch
         {
-            FileInfo file => Icons.GetFileIcon(file),
-            DirectoryInfo directory => Icons.GetDirectoryIcon(directory),
+            FileInfo file => Icon.GetFileIcon(file),
+            DirectoryInfo directory => Icon.GetDirectoryIcon(directory),
             _ => "?"
         };
 
