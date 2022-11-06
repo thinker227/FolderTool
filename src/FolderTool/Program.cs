@@ -5,6 +5,7 @@ using System.CommandLine.Parsing;
 using System.IO;
 using System.Text;
 using FolderTool;
+using FolderTool.Configuration;
 using FolderTool.Installation;
 using FolderTool.Rendering;
 using Spectre.Console;
@@ -73,10 +74,14 @@ rootCommand.SetHandler((searchPattern, recursive, maxDepth, pathDisplayMode, noF
             recursive,
             maxDepth);
 
+    var (fileIcons, directoryIcons) = ConfigurationReader.GetIcons();
+
     TreeRenderingOptions options = new()
     {
         Fancy = !noFancy,
-        PathDisplayMode = pathDisplayMode
+        PathDisplayMode = pathDisplayMode,
+        FileIcons = fileIcons,
+        DirectoryIcons = directoryIcons,
     };
 
     var tree = TreeRenderer.GetTree(currentDirectory, pattern, options);
