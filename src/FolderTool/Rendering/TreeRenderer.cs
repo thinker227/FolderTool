@@ -10,6 +10,7 @@ public sealed class TreeRenderer
 {
     private readonly DirectoryInfo rootDirectory;
     private readonly TreeRenderingOptions options;
+    private readonly IconRenderer iconRenderer;
 
 
 
@@ -17,6 +18,7 @@ public sealed class TreeRenderer
     {
         this.rootDirectory = rootDirectory;
         this.options = options;
+        iconRenderer = new(options.FileIcons, options.DirectoryIcons);
     }
 
 
@@ -112,8 +114,8 @@ public sealed class TreeRenderer
 
         string icon = entry switch
         {
-            FileInfo file => Icon.GetFileIcon(file),
-            DirectoryInfo directory => Icon.GetDirectoryIcon(directory),
+            FileInfo file => iconRenderer.GetFileIcon(file),
+            DirectoryInfo directory => iconRenderer.GetDirectoryIcon(directory),
             _ => "?"
         };
 
