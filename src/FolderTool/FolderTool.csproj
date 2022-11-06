@@ -13,6 +13,7 @@
     <PackAsTool>True</PackAsTool>
     <ToolCommandName>folder</ToolCommandName>
     <PackageOutputPath>./bin/package</PackageOutputPath>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
