@@ -5,6 +5,7 @@ using System.CommandLine.Parsing;
 using System.IO;
 using System.Text;
 using FolderTool;
+using FolderTool.Installation;
 using FolderTool.Rendering;
 using Spectre.Console;
 
@@ -93,6 +94,18 @@ rootCommand.SetHandler((searchPattern, recursive, maxDepth, pathDisplayMode, noF
     pathDisplayModeOption,
     noFancyOption,
     regexOption);
+
+Command installCommand = new("install")
+{
+    Description = "Installs the tool in the current directory"
+};
+installCommand.SetHandler(() =>
+{
+    DirectoryInfo currentDirectory = new(Directory.GetCurrentDirectory());
+
+    Installer.Install(currentDirectory);
+});
+rootCommand.AddCommand(installCommand);
 
 CommandLineBuilder builder = new(rootCommand);
 
