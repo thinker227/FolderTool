@@ -19,7 +19,9 @@ public static class Icon
         string resource = ManifestResourceHelper.ReadResource(fileIconsResourceLocation);
         var icons = deserializer.Deserialize<FileIconDefinitionsModel>(resource);
 
-        string extension = file.Extension[1..];
+        string extension = string.IsNullOrEmpty(file.Extension)
+            ? ""
+            : file.Extension[1..];
         return icons.Icons
             .FirstOrDefault(icon => icon.GetExtensions().Contains(extension))
             ?.Icon
