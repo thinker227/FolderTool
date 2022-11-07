@@ -13,7 +13,7 @@
     <Description>A command-line tool for displaying a tree graph of the current directory.</Description>
     <Copyright>thinker227 2022</Copyright>
     <RepositoryUrl>https://github.com/thinker227/FolderTool</RepositoryUrl>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <PackAsTool Condition="'$(Configuration)' == 'Tool'">True</PackAsTool>
     <ToolCommandName>folder</ToolCommandName>
     <PackageOutputPath>./bin/package</PackageOutputPath>
