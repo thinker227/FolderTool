@@ -6,5 +6,5 @@ foreach ($arch in $archs) {
     $archDir = "$publishDir/$arch"
     Write-Output "Publishing for $arch"
 
-    dotnet publish ./src/FolderTool -o $archDir -c Release -r $arch -p:PublishSingleFile=true --self-contained true
+    dotnet publish ./src/FolderTool -o $archDir -r $arch -c Release -p:DebugType=None -p:PublishSingleFile=true --self-contained true --nologo
 }
