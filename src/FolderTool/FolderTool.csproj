@@ -14,10 +14,13 @@
     <Copyright>thinker227 2022</Copyright>
     <RepositoryUrl>https://github.com/thinker227/FolderTool</RepositoryUrl>
     <Version>1.0.1</Version>
-    <PackAsTool Condition="'$(Configuration)' == 'Tool'">True</PackAsTool>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Tool'">
+    <PackAsTool>True</PackAsTool>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <ToolCommandName>folder</ToolCommandName>
     <PackageOutputPath>./bin/package</PackageOutputPath>
-    <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Tool'">True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
