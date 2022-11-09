@@ -13,3 +13,17 @@ icons:
   - icon: 
     name: Properties
   
+  - icon: ﬏
+    name: .vscode
+
+  - icon: 
+    names:
+    - src
+    - source
+
+  - icon: 
+    name: .github
+
+  - icon: 
+    name: .git
+  
