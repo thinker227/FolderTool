@@ -110,11 +110,6 @@ icons:
     - hxx
     - h++
 
-  - icon: 🐫
-    extensions:
-    - ml
-    - mli
-
   - icon: 
     extensions:
     - java
@@ -177,12 +172,6 @@ icons:
     - for
     - f90
   
-  - icon: 👴
-    extensions:
-    - cbl
-    - cob
-    - cpy
-  
 
 
     ### Markup languages and data formats ###
@@ -195,7 +184,7 @@ icons:
     - yml
     - yaml
 
-  - icon: 謹
+  - icon: 
     extensions:
     - xml
     - xaml
