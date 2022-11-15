@@ -2,23 +2,204 @@
 # https://www.nerdfonts.com
 # https://www.nerdfonts.com/cheat-sheet
 
+# Note: not all formats listed here have appropriate icons, thus some are omitted or made up to look similar to the actual icons.
+
 default: 
 
 icons:
+    ### Programming languages ###
+
+  # List taken from the SO 2022 survey.
+  # https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages
+
+  - icon: 
+    extension: rs
+  
+  - icon: 
+    extensions:
+    - ex
+    - exs
+  
+  - icon: 
+    extensions:
+    - clj
+    - cljs
+    - cljc
+    - edn
+
+  - icon: ﯤ
+    extension: ts
+  
+  - icon: 
+    extension: js
+
+  - icon: 
+    extension: jl
+  
+  - icon: 
+    extensions:
+    - py
+    - pyi
+    - pyc
+    - pyw
+    - pyz
+    - pyo
+  
+  - icon: 
+    extension: go
+
   - icon: 
     extension: cs
   
   - icon: ﬏
     extension: csproj
+
+  - icon: 
+    extensions:
+    - kt
+    - kts
+    - ktm
+  
+  - icon: ﯣ
+    extension: swift
+  
+  - icon: 
+    extension: dart
+  
+  - icon: 
+    extension: css
+
+  - icon: 
+    extension: fs
+
+  - icon: 
+    extensions:
+    - sh
+    - bash
+
+  - icon: ﭾ
+    extension: lisp
+
+  - icon: 
+    extension: apl
+
+  - icon: 
+    extension: hs
+
+  - icon: 
+    extensions:
+    - erl
+    - hrl
+
+  - icon: 
+    extensions:
+    - scala
+    - sc
+
+  - icon: 
+    extension: rb
+
+  - icon: ﭱ
+    extensions:
+    - cc
+    - cpp
+    - cxx
+    - c++
+    - hh
+    - hpp
+    - hxx
+    - h++
+
+  - icon: 
+    extensions:
+    - java
+    - jar
   
   - icon: 
     extension: ps1
+
+  - icon: 
+    extension: lua
+
+  - icon: 
+    extensions:
+    - php
+    - phar
+    - phtml
+    - pht
+    - phps
   
+  - icon: R
+    extensions:
+    - r
+    - rdata
+    - rds
+    - rda
+
+  - icon: C
+    extensions:
+    - c
+    - h
+
+  - icon: 
+    extensions:
+    - asm
+    - s
+    - inc
+    - wla
+    - src
+
+  - icon: 
+    extensions:
+    - plx
+    - pl
+    - pm
+    - xs
+    - t
+    - pod
+    - cgi
+
+  - icon: 
+    extensions:
+    - groovy
+    - gvy
+    - gy
+    - gsh
+  
+  - icon: F
+    extensions:
+    - f
+    - for
+    - f90
+  
+
+
+    ### Markup languages and data formats ###
+
   - icon: 
     extension: json
   
+  - icon: 
+    extensions:
+    - yml
+    - yaml
+
+  - icon: 
+    extensions:
+    - xml
+    - xaml
+
+  - icon: 
+    extensions:
+    - html
+    - htm
+
   - icon: 
     extension: md
+
+
+
+    ### Standard file formats ###
   
   - icon: 
     extension: txt
