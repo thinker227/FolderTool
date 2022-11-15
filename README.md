@@ -15,7 +15,7 @@ A command-line tool for displaying a tree graph of the current directory, becaus
 ### Manual
 
 > **Warning**
-> Manual installation requires the [.NET SDK](https://dotnet.microsoft.com/en-us/) >= 6.0.
+> Manual installation requires the [.NET SDK](https://dotnet.microsoft.com/en-us/) >= 7.0.
 
 1. Clone this repo.
 2. Run [`install-tool.ps1`](./install-tool.ps1).
