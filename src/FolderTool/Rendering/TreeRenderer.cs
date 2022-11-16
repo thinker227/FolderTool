@@ -128,17 +128,35 @@ public sealed class TreeRenderer
             path);
     }
 
-    private IRenderable GetFancyTextPath(FileSystemInfo entry) => options.PathDisplayMode switch
+    private IRenderable GetFancyTextPath(FileSystemInfo entry)
     {
-        PathDisplayMode.Full => GetTextPath(entry.FullName),
-        PathDisplayMode.Name => new Text(entry.Name),
-        PathDisplayMode.Relative or _ =>
-            GetTextPath(Path.GetRelativePath(rootDirectory.FullName, entry.FullName)),
-    };
+        var decoration = entry.Attributes.HasFlag(FileAttributes.Hidden)
+            ? Decoration.Italic
+            : Decoration.None;
 
-    private static TextPath GetTextPath(string path) => new TextPath(path)
-        .RootColor(Color.IndianRed)
-        .StemColor(Color.Grey42)
-        .LeafColor(Color.White)
-        .SeparatorColor(Color.Grey42);
+        return options.PathDisplayMode switch
+        {
+            PathDisplayMode.Full => GetTextPath(entry.FullName, decoration),
+            PathDisplayMode.Name => new Text(entry.Name, new Style(decoration: decoration)),
+            PathDisplayMode.Relative or _ =>
+                GetTextPath(Path.GetRelativePath(rootDirectory.FullName, entry.FullName), decoration),
+        };
+    }
+
+    private static TextPath GetTextPath(string path, Decoration decoration = Decoration.None) =>
+    new(path)
+    {
+        RootStyle = new(
+            foreground: Color.IndianRed,
+            decoration: decoration),
+        StemStyle = new(
+            foreground: Color.Grey42,
+            decoration: decoration),
+        LeafStyle = new(
+            foreground: Color.White,
+            decoration: decoration),
+        SeparatorStyle = new(
+            foreground: Color.Grey42,
+            decoration: decoration),
+    };
 }
