@@ -119,8 +119,12 @@ public sealed class TreeRenderer
             _ => "?"
         };
 
+        Style iconStyle = entry.Attributes.HasFlag(FileAttributes.Hidden)
+            ? new(Color.Grey42)
+            : new(Color.White);
+
         return new Inline(
-            new Text($"{icon} "),
+            new Text($"{icon} ", iconStyle),
             path);
     }
 
