@@ -58,9 +58,17 @@ Option<bool> regexOption = new("--regex")
 {
     Description = "Whether to treat the search pattern as a Regex instead of a file system search pattern"
 };
+regexOption.SetDefaultValue(false);
 rootCommand.AddOption(regexOption);
 
-rootCommand.SetHandler((searchPattern, recursive, maxDepth, pathDisplayMode, noFancy, regex) =>
+Option<bool> hiddenOption = new("--hidden")
+{
+    Description = "Whether to display hidden items in the file system"
+};
+hiddenOption.SetDefaultValue(false);
+rootCommand.AddOption(hiddenOption);
+
+rootCommand.SetHandler((searchPattern, recursive, maxDepth, pathDisplayMode, noFancy, regex, hidden) =>
 {
     DirectoryInfo currentDirectory = new(Directory.GetCurrentDirectory());
 
@@ -68,11 +76,13 @@ rootCommand.SetHandler((searchPattern, recursive, maxDepth, pathDisplayMode, noF
         ? RegexSearchPattern.Create(
             searchPattern,
             recursive,
-            maxDepth)
+            maxDepth,
+            hidden)
         : new FileSystemSearchPattern(
             string.IsNullOrWhiteSpace(searchPattern) ? "*" : searchPattern,
             recursive,
-            maxDepth);
+            maxDepth,
+            hidden);
 
     var (fileIcons, directoryIcons) = ConfigurationReader.GetIcons();
 
@@ -98,7 +108,8 @@ rootCommand.SetHandler((searchPattern, recursive, maxDepth, pathDisplayMode, noF
     maxDepthOption,
     pathDisplayModeOption,
     noFancyOption,
-    regexOption);
+    regexOption,
+    hiddenOption);
 
 Command installCommand = new("install")
 {
